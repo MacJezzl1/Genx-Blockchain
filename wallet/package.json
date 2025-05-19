@@ -1,0 +1,25 @@
+{
+  "name": "genx-wallet",
+  "version": "1.0.0",
+  "description": "Wallet implementation for the Crypto Trust Bank blockchain",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "blockchain",
+    "wallet",
+    "cryptocurrency",
+    "GENX"
+  ],
+  "author": "Genesis Architect",
+  "license": "MIT",
+  "dependencies": {
+    "serde": "^1.0.0",
+    "thiserror": "^1.0.0"
+  },
+  "devDependencies": {},
+  "peerDependencies": {
+    "core": "^1.0.0"
+  }
+}

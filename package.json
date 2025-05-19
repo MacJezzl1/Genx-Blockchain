@@ -1,0 +1,24 @@
+{
+  "name": "token-builder",
+  "version": "1.0.0",
+  "description": "Web3 token creation and listing platform",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "start:backend": "cd backend && npm start",
+    "start:frontend": "cd frontend && npm start",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "install:all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "blockchain": "node start-blockchain.js",
+    "blockchain:validator": "node start-blockchain.js --validator"
+  },
+  "keywords": ["web3", "token", "crypto", "blockchain"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "concurrently": "^8.2.0",
+    "open": "^9.1.0"
+  }
+}

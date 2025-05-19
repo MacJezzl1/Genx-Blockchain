@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GENX Blockchain Explorer</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="explorer.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 0C8.954 0 0 8.954 0 20C0 31.046 8.954 40 20 40C31.046 40 40 31.046 40 20C40 8.954 31.046 0 20 0ZM20 6C26.627 6 32 11.373 32 18C32 24.627 26.627 30 20 30C13.373 30 8 24.627 8 18C8 11.373 13.373 6 20 6ZM20 12C16.686 12 14 14.686 14 18C14 21.314 16.686 24 20 24C23.314 24 26 21.314 26 18C26 14.686 23.314 12 20 12Z" fill="#6C5CE7"/>
+        </svg>
+        <h1>GENX Blockchain Explorer</h1>
+      </div>
+      <div class="network-status">
+        <div class="status-indicator online"></div>
+        <span id="node-status">Connected</span>
+      </div>
+    </header>
+
+    <div class="dashboard">
+      <div class="stats-container">
+        <div class="stat-card">
+          <h3>Blockchain Height</h3>
+          <div class="stat-value" id="blockchain-height">0</div>
+        </div>
+        <div class="stat-card">
+          <h3>Transactions</h3>
+          <div class="stat-value" id="transaction-count">0</div>
+        </div>
+        <div class="stat-card">
+          <h3>Connected Peers</h3>
+          <div class="stat-value" id="peer-count">0</div>
+        </div>
+        <div class="stat-card">
+          <h3>Validator Status</h3>
+          <div class="stat-value" id="validator-status">Inactive</div>
+        </div>
+      </div>
+
+      <div class="search-container">
+        <input type="text" id="search-input" placeholder="Search by block hash, transaction ID, or address...">
+        <button id="search-button">Search</button>
+      </div>
+
+      <div class="tabs">
+        <button class="tab-button active" data-tab="blocks">Latest Blocks</button>
+        <button class="tab-button" data-tab="transactions">Latest Transactions</button>
+        <button class="tab-button" data-tab="contracts">Smart Contracts</button>
+      </div>
+
+      <div class="tab-content">
+        <div class="tab-pane active" id="blocks-pane">
+          <h2>Latest Blocks</h2>
+          <div class="table-container">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Height</th>
+                  <th>Hash</th>
+                  <th>Time</th>
+                  <th>Transactions</th>
+                  <th>Validator</th>
+                </tr>
+              </thead>
+              <tbody id="blocks-table-body">
+                <!-- Block data will be inserted here -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="tab-pane" id="transactions-pane">
+          <h2>Latest Transactions</h2>
+          <div class="table-container">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Transaction ID</th>
+                  <th>From</th>
+                  <th>To</th>
+                  <th>Amount</th>
+                  <th>Time</th>
+                </tr>
+              </thead>
+              <tbody id="transactions-table-body">
+                <!-- Transaction data will be inserted here -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="tab-pane" id="contracts-pane">
+          <h2>Smart Contracts</h2>
+          <div class="table-container">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Contract Address</th>
+                  <th>Creator</th>
+                  <th>Created</th>
+                  <th>Transactions</th>
+                </tr>
+              </thead>
+              <tbody id="contracts-table-body">
+                <!-- Contract data will be inserted here -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="detail-modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2 id="modal-title">Details</h2>
+        <div id="modal-content"></div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2023 Crypto Trust Bank Blockchain | GENX</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
